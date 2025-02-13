@@ -8,6 +8,8 @@ const CreateBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [publishYear, setPublishYear] = useState('');
+  const [image, setImage] = useState('')
+  const [context, setContext] = useState('')
   const [loading, setLoading] = useState(false);
   const {enqueueSnackbar}=useSnackbar()
   const navigate=useNavigate();
@@ -15,7 +17,9 @@ const CreateBook = () => {
     const data={
       title,
       author,
-      publishYear
+      publishYear,
+      image,
+      context
     };
     setLoading(true);
     axios
@@ -57,6 +61,20 @@ const CreateBook = () => {
           <input type='number'
             value={publishYear}
             onChange={(e)=>setPublishYear(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2 w-full' />
+          </div>
+          <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Image Link</label>
+          <input type='text'
+            value={image}
+            onChange={(e)=>setImage(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2 w-full' />
+          </div>
+          <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Book Link</label>
+          <input type='text'
+            value={context}
+            onChange={(e)=>setContext(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2 w-full' />
           </div>
           <button className='p-2 bg-sky-300 m-8' onClick={handleSaveBook}>Save</button>

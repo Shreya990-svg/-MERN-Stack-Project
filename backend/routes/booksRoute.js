@@ -5,14 +5,18 @@ router.post('/',async(req,res)=>{
     try{
         if(!req.body.title||
            !req.body.author||
-           !req.body.publishYear 
+           !req.body.publishYear||
+           !req.body.image||
+           !req.body.context
         ){
             return res.status(400).send({message:"Please Provide All required fields"});
         }
         const newBook={
             title:req.body.title,
             author:req.body.author,
-            publishYear:req.body.publishYear
+            publishYear:req.body.publishYear,
+            image:req.body.image,
+            context:req.body.context
         };
         const book=await Book.create(newBook);
         return res.status(201).send(book);
@@ -44,7 +48,9 @@ router.put('/:id',async(req,res)=>{
     try{
         if(!req.body.title||
            !req.body.author||
-           !req.body.publishYear
+           !req.body.publishYear||
+           !req.body.image||
+           !req.body.context
         ){
             return res.status(400).send({message:"Please fill all fields"});
         }

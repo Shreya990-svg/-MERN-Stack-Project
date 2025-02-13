@@ -11,6 +11,14 @@ const bookSchema=mongoose.Schema({
     publishYear:{
         type:Number,
         required:true
+    },
+    image:{
+        type:String,
+        required:true
+    },
+    context:{
+        type:String,
+        required:true
     }
 },{
     timestamps:true
