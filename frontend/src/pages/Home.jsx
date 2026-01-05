@@ -9,7 +9,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("https://mern-stack-project-bnty.onrender.com/books")
+      .get("http://localhost:5000/books")
       .then((res) => setBooks(res.data.data)) // ✅ fixed here
       .catch((err) => console.error("Error fetching books:", err));
   }, []);
