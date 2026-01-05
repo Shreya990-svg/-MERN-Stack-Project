@@ -13,7 +13,7 @@ function EditBook() {
 
   useEffect(() => {
     axios
-      .get(`http:/https://mern-stack-project-bnty.onrender.com/books/${id}`)
+      .get(`http://localhost:5000/books/${id}`)
       .then((res) => setForm(res.data))
       .finally(() => setLoading(false));
   }, [id]);
