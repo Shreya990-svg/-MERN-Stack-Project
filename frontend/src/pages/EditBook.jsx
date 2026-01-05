@@ -23,7 +23,7 @@ function EditBook() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:5000/books/${id}`, form);
+    await axios.put(`https://mern-stack-project-bnty.onrender.com/${id}`, form);
     navigate("/");
   };
 
